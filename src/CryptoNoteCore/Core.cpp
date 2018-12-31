@@ -5,34 +5,39 @@
 // Please see the included LICENSE file for more information.
 
 #include <algorithm>
-#include <numeric>
-#include <set>
-#include <unordered_set>
 
-#include "Core.h"
-#include "Common/FormatTools.h"
-#include "Common/LicenseCanary.h"
-#include "Common/ShuffleGenerator.h"
-#include "Common/Math.h"
-#include "Common/MemoryInputStream.h"
-#include "CryptoNoteTools.h"
-#include "CryptoNoteFormatUtils.h"
-#include "BlockchainCache.h"
-#include "BlockchainStorage.h"
-#include "BlockchainUtils.h"
-#include "CryptoNoteCore/ITimeProvider.h"
-#include "CryptoNoteCore/CoreErrors.h"
-#include "CryptoNoteCore/MemoryBlockchainStorage.h"
-#include "CryptoNoteCore/TransactionExtra.h"
-#include "CryptoNoteCore/TransactionPool.h"
-#include "CryptoNoteCore/TransactionPoolCleaner.h"
-#include "CryptoNoteCore/UpgradeManager.h"
-#include "CryptoNoteCore/Mixins.h"
-#include "CryptoNoteProtocol/CryptoNoteProtocolHandlerCommon.h"
+#include <numeric>
+
+#include <Common/ShuffleGenerator.h>
+#include <Common/Math.h>
+#include <Common/MemoryInputStream.h>
+
+#include <CryptoNoteCore/BlockchainCache.h>
+#include <CryptoNoteCore/BlockchainStorage.h>
+#include <CryptoNoteCore/BlockchainUtils.h>
+#include <CryptoNoteCore/Core.h>
+#include <CryptoNoteCore/CoreErrors.h>
+#include <CryptoNoteCore/CryptoNoteFormatUtils.h>
+#include <CryptoNoteCore/CryptoNoteTools.h>
+#include <CryptoNoteCore/ITimeProvider.h>
+#include <CryptoNoteCore/MemoryBlockchainStorage.h>
+#include <CryptoNoteCore/Mixins.h>
+#include <CryptoNoteCore/TransactionApi.h>
+#include <CryptoNoteCore/TransactionExtra.h>
+#include <CryptoNoteCore/TransactionPool.h>
+#include <CryptoNoteCore/TransactionPoolCleaner.h>
+#include <CryptoNoteCore/UpgradeManager.h>
+
+#include <CryptoNoteProtocol/CryptoNoteProtocolHandlerCommon.h>
+
+#include <set>
 
 #include <System/Timer.h>
 
-#include "TransactionApi.h"
+#include <Utilities/FormatTools.h>
+#include <Utilities/LicenseCanary.h>
+
+#include <unordered_set>
 
 #include <WalletTypes.h>
 
@@ -537,39 +542,24 @@ bool Core::getTransactionsStatus(
         /* Pop into a set for quicker .find() */
         std::unordered_set<Crypto::Hash> poolTransactions(txs.begin(), txs.end());
 
-        /* Loop through the inputted hashes */
-        for (auto it = transactionHashes.begin(); it != transactionHashes.end();)
+        for (const auto hash : transactionHashes)
         {
-            /* Transaction exists in the pool */
-            if (poolTransactions.find(*it) != poolTransactions.end())
+            if (poolTransactions.find(hash) != poolTransactions.end())
             {
-                transactionsInPool.insert(*it);
-
-                /* We have processed this transaction, remove it from the
-                   container, and update the iterators */
-                it = transactionHashes.erase(it);
+                /* It's in the pool */
+                transactionsInPool.insert(hash);
+            }
+            else if (findSegmentContainingTransaction(hash) != nullptr)
+            {
+                /* It's in a block */
+                transactionsInBlock.insert(hash);
             }
             else
             {
-                ++it;
+                /* We don't know anything about it */
+                transactionsUnknown.insert(hash);
             }
         }
-
-        for (auto it = transactionHashes.begin(); it != transactionHashes.end();)
-        {
-            /* The transaction is present in a block */
-            if (findSegmentContainingTransaction(*it) != nullptr)
-            {
-                transactionsInBlock.insert(*it);
-
-                /* We have processed this transaction, remove it from the container
-                   and update the iterators */
-                it = transactionHashes.erase(it);
-            }
-        }
-
-        /* Anything remaining, the daemon does not know about. */
-        transactionsUnknown = transactionHashes;
 
         return true;
     }
@@ -1332,7 +1322,7 @@ bool Core::getRandomOutputs(uint64_t amount, uint16_t count, std::vector<uint32_
   globalIndexes = chainsLeaves[0]->getRandomOutsByAmount(amount, count, getTopBlockIndex());
   if (globalIndexes.empty()) {
     logger(Logging::ERROR) << "Failed to get any matching outputs for amount "
-                           << amount << " (" << Common::formatAmount(amount)
+                           << amount << " (" << Utilities::formatAmount(amount)
                            << "). Further explanation here: "
                            << "https://gist.github.com/zpalmtree/80b3e80463225bcfb8f8432043cb594c\n"
                            << "Note: If you are a public node operator, you can safely ignore this message. "
