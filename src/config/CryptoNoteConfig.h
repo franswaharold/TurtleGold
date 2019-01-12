@@ -205,8 +205,8 @@ const uint64_t DATABASE_READ_BUFFER_MB_DEFAULT_SIZE          = 10;
 const uint32_t DATABASE_DEFAULT_MAX_OPEN_FILES               = 100;
 const uint16_t DATABASE_DEFAULT_BACKGROUND_THREADS_COUNT     = 2;
 
-const char     LATEST_VERSION_URL[]                          = "https://github.com/rogerrobers/dero-gold-coin/releases";
-const std::string LICENSE_URL                                = "https://github.com/rogerrobers/dero-gold-coin/blob/development/LICENSE";
+const char     LATEST_VERSION_URL[]                          = "https://github.com/derogold/derogold/releases";
+const std::string LICENSE_URL                                = "https://github.com/derogold/derogold/blob/master/LICENSE";
 const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 {
     {  0x20, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6c, 0x6c, 0x20, 0x67, 0x65, 0x6e, 0x74, 0x6f, 0x6f, 0x20  }
