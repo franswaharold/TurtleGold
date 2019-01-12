@@ -2,7 +2,7 @@
 #define STR(x) STR_HELPER(x)
 
 #define PROJECT_NAME "Dero Gold"
-#define PROJECT_SITE "http://www.turtlecoin.lol"
+#define PROJECT_SITE "http://derogold.tq"
 #define PROJECT_COPYRIGHT "Copyright 2018, The Dero Gold Association"
 
 #define APP_VER_MAJOR 0
