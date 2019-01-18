@@ -170,7 +170,7 @@ The binaries will be in the `src/Release` folder when you are complete.
 - `cd Release`
 - `DeroGoldd.exe --version`
 
-#### Raspberry Pi 3 B+
+#### Raspberry Pi 3 B+ (AARCH64/ARM64)
 The following images are known to work. Your operation system image **MUST** be 64 bit.
 
 ##### Known working images
