@@ -1,4 +1,4 @@
-![image](https://i.imgur.com/z8XFAmc.png)
+![image](https://i.imgur.com/O3yf6NI.png)
 
 ### Installing
 
