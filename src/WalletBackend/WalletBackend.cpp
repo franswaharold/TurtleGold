@@ -734,7 +734,7 @@ void WalletBackend::reset(uint64_t scanHeight, uint64_t timestamp)
     });
 }
 
-std::tuple<Error, std::string> WalletBackend::addSubWallet()
+std::tuple<Error, std::string, Crypto::SecretKey> WalletBackend::addSubWallet()
 {
     return m_syncRAIIWrapper->pauseSynchronizerToRunFunction([this]() {
         /* Add the sub wallet */
