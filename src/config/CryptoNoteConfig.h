@@ -212,7 +212,6 @@ const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 
 const char* const SEED_NODES[] = {
     "97.64.253.98:42069", // morpheus
-    "185.17.27.106:42069", // morpheus backup
     "51.255.209.200:42069", // explorer.dego.gq
     "23.96.93.180:42069" // Aluisyo
 };
