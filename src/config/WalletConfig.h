@@ -43,7 +43,6 @@ namespace WalletConfig
     const uint8_t numDecimalPlaces = CryptoNote::parameters
                                                ::CRYPTONOTE_DISPLAY_DECIMAL_POINT;
 
-
     /* The length of a standard address for your coin */
     const uint16_t standardAddressLength = 97;
 
@@ -71,4 +70,8 @@ namespace WalletConfig
        fork height, or 0, if never allowed. This is ignored if a mixin of
        zero is allowed */
     const uint64_t mixinZeroDisabledHeight = 0;
+
+    /* Should we process coinbase transactions? We can skip them to speed up
+       syncing, as most people don't have solo mined transactions */
+    const bool processCoinbaseTransactions = true;
 }
