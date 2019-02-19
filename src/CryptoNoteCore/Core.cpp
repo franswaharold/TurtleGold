@@ -1911,7 +1911,18 @@ std::error_code Core::validateBlock(const CachedBlock& cachedBlock, IBlockchainC
     }
   }
 
-  if (block.timestamp > getAdjustedTime() + currency.blockFutureTimeLimit(previousBlockIndex+1)) {
+  uint64_t futureTimeLimit;
+
+  if (previousBlockIndex + 1 >= CryptoNote::parameters::DIFFICULTY_TARGET_V2_HEIGHT)
+  {
+      futureTimeLimit = CryptoNote::parameters::DIFFICULTY_TARGET * 6;
+  }
+  else
+  {
+      futureTimeLimit = CryptoNote::parameters::DIFFICULTY_TARGET_V2 * 6;
+  }
+
+  if (block.timestamp > getAdjustedTime() + futureTimeLimit) {
     return error::BlockValidationError::TIMESTAMP_TOO_FAR_IN_FUTURE;
   }
 
