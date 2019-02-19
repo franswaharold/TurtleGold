@@ -35,8 +35,14 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 11;
 // MONEY_SUPPLY - total number coins to be generated
 const uint64_t MONEY_SUPPLY                                  = UINT64_C(10000000000000000);
 
-const unsigned EMISSION_SPEED_FACTOR                         = 23;
-static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
+const uint32_t EMISSION_SPEED_FACTOR                         = 23;
+const uint32_t EMISSION_SPEED_FACTOR_V2                      = 24;
+
+static_assert(EMISSION_SPEED_FACTOR    <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
+static_assert(EMISSION_SPEED_FACTOR_V2 <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
+
+/* Height to swap to EMISSION_SPEED_FACTOR_V2 */
+const uint64_t EMISSION_SPEED_FACTOR_V2_HEIGHT               = 700000;
 
 /* Premine amount */
 const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(0);
