@@ -3,7 +3,7 @@
 
 #define PROJECT_NAME "Dero Gold"
 #define PROJECT_SITE "http://derogold.tq"
-#define PROJECT_COPYRIGHT "Copyright 2018, The Dero Gold Association"
+#define PROJECT_COPYRIGHT "Copyright 2019, The Dero Gold Association"
 
 #define APP_VER_MAJOR 0
 #define APP_VER_MINOR 1
