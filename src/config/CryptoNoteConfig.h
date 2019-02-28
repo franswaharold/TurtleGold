@@ -224,5 +224,6 @@ const char* const SEED_NODES[] = {
     "97.64.253.98:42069", // morpheus
     "51.255.209.200:42069", // explorer.dego.gq
     "5.172.219.174:42069" //sniperviperman // Edited as requested by sniperviperman.
+    "149.129.97.195:42069", // netmebtc
 };
 } // CryptoNote
