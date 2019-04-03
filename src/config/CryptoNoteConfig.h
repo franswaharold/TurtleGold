@@ -2,7 +2,7 @@
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018-2019, The TurtleCoin Developers
 // Copyright (c) 2018-2019, The DeroGold Association
-//
+// Copyright (c) 2019-2019
 // Please see the included LICENSE file for more information.
 
 #pragma once
@@ -17,11 +17,11 @@
 namespace CryptoNote {
 namespace parameters {
 
-const uint64_t DIFFICULTY_TARGET                             = 10; // seconds
-const uint64_t DIFFICULTY_TARGET_V2                          = 20; // seconds
+const uint64_t DIFFICULTY_TARGET                             = 25; // seconds
+const uint64_t DIFFICULTY_TARGET_V2                          = 25; // seconds
 
 /* Height to swap to DIFFICULTY_TARGET_V2 */
-const uint64_t DIFFICULTY_TARGET_V2_HEIGHT                   = 700000;
+const uint64_t DIFFICULTY_TARGET_V2_HEIGHT                   = 100000;
 
 const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
@@ -42,7 +42,7 @@ static_assert(EMISSION_SPEED_FACTOR    <= 8 * sizeof(uint64_t), "Bad EMISSION_SP
 static_assert(EMISSION_SPEED_FACTOR_V2 <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 /* Height to swap to EMISSION_SPEED_FACTOR_V2 */
-const uint64_t EMISSION_SPEED_FACTOR_V2_HEIGHT               = 700000;
+const uint64_t EMISSION_SPEED_FACTOR_V2_HEIGHT               = 100000;
 
 /* Premine amount */
 const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(0);
@@ -124,8 +124,8 @@ const size_t   FUSION_TX_MIN_IN_OUT_COUNT_RATIO              = 4;
 
 const uint32_t UPGRADE_HEIGHT_V2                             = 1;
 const uint32_t UPGRADE_HEIGHT_V3                             = 2;
-const uint32_t UPGRADE_HEIGHT_V4                             = 3; // Upgrade height for CN-Lite Variant 1 switch.
-const uint32_t UPGRADE_HEIGHT_V5                             = 4; // Upgrade height for CN-Turtle Variant 2 switch.
+const uint32_t UPGRADE_HEIGHT_V4                             = 3;
+const uint32_t UPGRADE_HEIGHT_V5                             = 4;
 const uint32_t UPGRADE_HEIGHT_CURRENT                        = UPGRADE_HEIGHT_V5;
 
 const unsigned UPGRADE_VOTING_THRESHOLD                      = 90;               // percent
@@ -184,7 +184,7 @@ const uint64_t BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  100;    //by def
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
 const int      P2P_DEFAULT_PORT                              =  42069;
-const int      RPC_DEFAULT_PORT                              =  6969;
+const int      RPC_DEFAULT_PORT                              =  42065;
 const int      SERVICE_DEFAULT_PORT                          =  1337;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
@@ -223,13 +223,10 @@ const char     LATEST_VERSION_URL[]                          = "https://github.c
 const std::string LICENSE_URL                                = "https://github.com/derogold/derogold/blob/master/LICENSE";
 const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 {
-    {  0x20, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6c, 0x6c, 0x20, 0x67, 0x65, 0x6e, 0x74, 0x6f, 0x6f, 0x20  }
+    {  0x10, 0x42, 0x9e, 0x83, 0x94, 0x31, 0x2c, 0x2c, 0x10, 0x97, 0x75, 0x6a, 0x34, 0x5f, 0x8f, 0x10  }
 };
 
 const char* const SEED_NODES[] = {
-    "97.64.253.98:42069", // morpheus
-    "78.46.49.89:42069", // explorer.dego.gq
-    "5.172.219.174:42069", //sniperviperman // Edited as requested by sniperviperman.
-    "149.129.97.195:42069", // netmebtc
+    "5.172.219.174:42069", //sniperviperman
 };
 } // CryptoNote
