@@ -64,7 +64,7 @@ You need to modify the below command for your version of ubuntu - see https://ap
 - `export CC=clang-6.0`
 - `export CXX=clang++-6.0`
 - `git clone -b master --single-branch https://github.com/turtlegold/TurtleGold`
-- `cd derogold`
+- `cd turtlegold`
 - `mkdir build`
 - `cd build`
 - `cmake ..`
@@ -83,7 +83,7 @@ If you want to use clang, ensure you set the environment variables `CC` and `CXX
 See the ubuntu instructions for an example.
 
 - `git clone -b master --single-branch https://github.com/turtlegold/TurtleGold`
-- `cd derogold`
+- `cd turtlegold`
 - `mkdir build`
 - `cd build`
 - `cmake ..`
@@ -107,7 +107,7 @@ The binaries will be in the `src` folder when you are complete.
 - `export CC=gcc-8`
 - `export CXX=g++-8`
 - `git clone -b master --single-branch https://github.com/turtlegold/TurtleGold`
-- `cd derogold`
+- `cd turtlegold`
 - `mkdir build`
 - `cd build`
 - `cmake ..`
