@@ -21,12 +21,12 @@ const uint64_t DIFFICULTY_TARGET                             = 25; // seconds
 const uint64_t DIFFICULTY_TARGET_V2                          = 25; // seconds
 
 /* Height to swap to DIFFICULTY_TARGET_V2 */
-const uint64_t DIFFICULTY_TARGET_V2_HEIGHT                   = 100000;
+const uint64_t DIFFICULTY_TARGET_V2_HEIGHT                   = 500000;
 
 const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 8411;
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x31;
 const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 120;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 6 * DIFFICULTY_TARGET;
 
@@ -42,7 +42,7 @@ static_assert(EMISSION_SPEED_FACTOR    <= 8 * sizeof(uint64_t), "Bad EMISSION_SP
 static_assert(EMISSION_SPEED_FACTOR_V2 <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 /* Height to swap to EMISSION_SPEED_FACTOR_V2 */
-const uint64_t EMISSION_SPEED_FACTOR_V2_HEIGHT               = 100000;
+const uint64_t EMISSION_SPEED_FACTOR_V2_HEIGHT               = 500000;
 
 /* Premine amount */
 const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(0);
