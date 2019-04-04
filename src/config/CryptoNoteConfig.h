@@ -184,7 +184,7 @@ const uint64_t BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  100;    //by def
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
 const int      P2P_DEFAULT_PORT                              =  42065;
-const int      RPC_DEFAULT_PORT                              =  42069;
+const int      RPC_DEFAULT_PORT                              =  42060;
 const int      SERVICE_DEFAULT_PORT                          =  1337;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
