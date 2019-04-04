@@ -2,7 +2,7 @@
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018-2019, The TurtleCoin Developers
 // Copyright (c) 2018-2019, The DeroGold Association
-// Copyright (c) 2019-2019
+// Copyright (c) 2019-2019, The TurtleGold Developers
 // Please see the included LICENSE file for more information.
 
 #pragma once
@@ -223,7 +223,7 @@ const char     LATEST_VERSION_URL[]                          = "https://github.c
 const std::string LICENSE_URL                                = "https://github.com/derogold/derogold/blob/master/LICENSE";
 const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 {
-    {  0x10, 0x42, 0x9e, 0x83, 0x94, 0x31, 0x2c, 0x2c, 0x10, 0x97, 0x75, 0x6a, 0x34, 0x5f, 0x8f, 0x10  }
+    {  0x1a, 0x9c, 0x7l, 0x99, 0xad, 0x88, 0xa3, 0x81, 0x95, 0xa9, 0x11, 0xm4, 0xz6, 0xy1, 0x23, 0xu8  }
 };
 
 const char* const SEED_NODES[] = {
