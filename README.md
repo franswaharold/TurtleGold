@@ -116,7 +116,7 @@ The binaries will be in the `src` folder when you are complete.
 The binaries will be in the `src` folder when you are complete.
 
 - `cd src`
-- `./DeroGoldd --version`
+- `./TurtleGoldd --version`
 
 #### OSX/Apple, using Clang
 
@@ -154,7 +154,7 @@ The binaries will be in the `src` folder when you are complete.
 ##### Building
 
 - From the start menu, open 'x64 Native Tools Command Prompt for vs2017'.
-- `cd <your_dero_gold_directory>`
+- `cd <your_turtle_gold_directory>`
 - `mkdir build`
 - `cd build`
 - `set PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin";%PATH%`
@@ -162,7 +162,7 @@ The binaries will be in the `src` folder when you are complete.
 
 If you have errors on this step about not being able to find the following static libraries, you may need to update your cmake. Open 'Visual Studio Installer' and click 'Update'.
 
-- `MSBuild DeroGold.sln /p:Configuration=Release /m`
+- `MSBuild TurtleGold.sln /p:Configuration=Release /m`
 
 The binaries will be in the `src/Release` folder when you are complete.
 
