@@ -5,7 +5,7 @@ services:
     image: funkypenguin/turtlecoin
     container_name: turtletest-node1
     volumes:
-      - ../turtlecoind:/var/lib/turtlecoind/
+      - ../turtlegoldd:/var/lib/turtlegoldd/
     networks:
       testnet:
         ipv4_address: 172.16.76.11
