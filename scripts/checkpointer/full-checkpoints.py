@@ -29,7 +29,7 @@ def height():
     base_url = 'http://localhost:6969/getheight'
     resp = requests.get(base_url).json()
     if 'height' not in resp:
-        print ('Unexpected response, make sure DeroGoldd is running',
+        print ('Unexpected response, make sure TurtleGoldd is running',
                resp)
         sys.exit(-1)
     else:
@@ -46,7 +46,7 @@ def rpc(method, params={}):
         }
     resp = requests.post(base_url, data=json.dumps(payload)).json()
     if 'result' not in resp:
-        print ('Unexpected response, make sure DeroGoldd is running with block explorer enabled'
+        print ('Unexpected response, make sure TurtleGoldd is running with block explorer enabled'
                , resp)
         sys.exit(-1)
     else:
