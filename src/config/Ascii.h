@@ -6,6 +6,7 @@
 #pragma once
 
 const std::string asciiArt =
+"                                                                       \n"
 "                                      N  N                             \n"
 "                                    hsoooosh                           \n"
 "                               Ndyooooooooooooyd                       \n"
@@ -43,4 +44,5 @@ const std::string asciiArt =
 "                               Nyooooooooooooooy                       \n"
 "                                 NhooooooooooyN                        \n"
 "                                    dsoooosdN                          \n"
-"                                       dd                              \n";
+"                                       dd                              \n"
+"                                                                       \n";
